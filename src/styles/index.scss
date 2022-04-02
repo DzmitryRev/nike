@@ -1,4 +1,7 @@
 @import "./mixins.scss";
+@import "./variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
 
 *,
 *::after,
@@ -6,6 +9,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -16,4 +27,44 @@ a,
 button {
   color: inherit;
   font-family: inherit;
+}
+
+.wrapper {
+  max-width: $max-width;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 30px;
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  &__social {
+    li {
+      margin: 0 0 0 15px;
+    }
+  }
+  &__nav {
+    li {
+      margin: 0 30px;
+      a {
+        @include font(20px, 28px, 400);
+        color: $primary-blue;
+      }
+    }
+  }
 }
