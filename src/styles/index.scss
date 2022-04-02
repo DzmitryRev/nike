@@ -27,11 +27,11 @@ a,
 button {
   color: inherit;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .wrapper {
   max-width: $max-width;
-  min-height: 100vh;
   margin: 0 auto;
   position: relative;
 }
@@ -64,6 +64,55 @@ button {
       a {
         @include font(20px, 28px, 400);
         color: $primary-blue;
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 0 0 0;
+
+  &-description {
+    &__colors {
+      h2 {
+        @include font(20px, 28px, 700);
+        margin: 0 0 10px 0;
+        color: $black;
+        text-transform: uppercase;
+      }
+      ul {
+        display: flex;
+      }
+      li {
+        button {
+          width: 25px;
+          height: 25px;
+          border-radius: 100%;
+          margin: 0 12px 0 0;
+          border: none;
+          &[data-color="pink"] {
+            background-color: $pink;
+          }
+          &[data-color="blue"] {
+            background-color: $blue;
+          }
+          &[data-color="purple"] {
+            background-color: $purple;
+          }
+          &[data-color="green"] {
+            background-color: $green;
+          }
+          &[data-color="black"] {
+            background-color: $black;
+          }
+        }
+        &:last-of-type {
+          button {
+            margin: 0;
+          }
+        }
       }
     }
   }
