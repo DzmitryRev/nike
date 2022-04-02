@@ -23,7 +23,7 @@ module.exports = {
   target,
   plugins,
   devtool: "source-map",
-  entry: "./src/index.js",
+  entry: "./src/main.js",
   devServer: {
     hot: true,
     static: {
